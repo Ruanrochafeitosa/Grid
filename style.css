@@ -1,0 +1,73 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    background-color: lightgreen;
+}
+nav{
+    background-color: lemonchiffon;
+}
+
+section{
+    background-color: aquamarine;
+}
+
+article{
+    background-color: cadetblue;
+}
+
+footer{
+    background-color: lightblue;
+}
+/* >* faz o seguinte: > seleciona os elementos filhos da classe grid e * seleciona todos os elementos */
+.grid>*{
+    min-height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.grid{
+    display: grid;
+    /* grid-template-rows: 50px 100px 300px 50px 100px; */
+    /*Essa é forma de configurar o tamanho do elemento um por vez*/
+    /* grid-template-rows: repeat(5, 150px); */
+    /*Essa define que vai repetir as 5 primeiras o tamanho de 150px*/
+    /* grid-template-rows: repeat(5, auto);  essa era a forma antiga e agora a nova com auto row*/
+    grid-auto-rows: 100px;
+    /*Dessa forma vai ficar automático*/
+    grid-template-columns: 240px repeat(5, 1fr);
+    /*O 1fr vai dividir como forma de fração*/
+    gap: 1rem;/*O gap é a distancia que os blocos vão ter um do outro*/
+}
+
+header{
+    grid-column: 1 / -1; /*Se eu colocar -1 ele só pega o final que foi colocado no tamplate colun e faz automatico,
+    tipo lá ta 5 então ele vai cortar no quinto. se fosse -2 ele ia quebrar no penultimo só testando para entender.*/
+    /*Sabe aquela divisão que temos na grid line? então cada linha que define o começo e fim da divisão é uma linha
+    imagina tipo | | | | | não virou uma tabela? Portanto nesse exemplo o header iria ocupar 5 linhas ou seja ia ser 1/5*/
+    grid-row: 1 / -1;
+}
+
+nav{
+    grid-row: 2 / -2; /*Vai fazer uma caixa ocupar a partir da segunda linha até a quarta*/
+    grid-column: 1 / 2;
+}
+
+section{
+    grid-row: 3 / 3;
+    grid-column: 2 / -1;
+}
+
+footer{
+    grid-column: 1 / -1;
+}
+
+
+
+
+
+
+
+
